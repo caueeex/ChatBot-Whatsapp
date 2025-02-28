@@ -95,9 +95,9 @@ Este projeto está licenciado sob a Licença MIT. Consulte o arquivo `LICENSE` p
 
 Caso tenha dúvidas ou sugestões, entre em contato:
 
-- **Nome**: [Seu Nome]
-- **Email**: [seu-email@example.com]
-- **GitHub**: [seu-usuario](https://github.com/seu-usuario)
+- **Nome**: [Cauê Sotero]
+- **Email**: [soterocaue2@hgmail.com]
+- **GitHub**: [caueeex](https://github.com/caueeex)
 
 ## 🔄 Como Subir para o GitHub
 
