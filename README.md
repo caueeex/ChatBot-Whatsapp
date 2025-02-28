@@ -1,4 +1,4 @@
-# ChatBot WhatsApp - SENAI
+# ChatBot WhatsApp
 
 Este projeto é um bot de atendimento automatizado para WhatsApp, desenvolvido para interagir com usuários e fornecer informações sobre cursos, atendimento a empresas, emissão de boletos, documentação e outras áreas relacionadas ao SENAI. O bot utiliza a biblioteca `@whiskeysockets/baileys` para se conectar ao WhatsApp e uma interface web para exibir o QR Code e o status da conexão.
 
