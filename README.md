@@ -32,7 +32,7 @@ Antes de começar, certifique-se de ter os seguintes requisitos instalados:
 
 3. **Instale as dependências:**
    ```bash
-   npm install
+   npm install @whiskeysockets/baileys@latest
    ```
 
 4. **Crie um arquivo `.env` na raiz do projeto e adicione as variáveis de ambiente necessárias (se houver):**
