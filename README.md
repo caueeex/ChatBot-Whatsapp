@@ -2,150 +2,139 @@
 
 Este projeto é um bot de atendimento automatizado para WhatsApp, desenvolvido para interagir com usuários e fornecer informações sobre cursos, atendimento a empresas, emissão de boletos, documentação e outras áreas relacionadas ao SENAI. O bot utiliza a biblioteca `@whiskeysockets/baileys` para se conectar ao WhatsApp e uma interface web para exibir o QR Code e o status da conexão.
 
-## Funcionalidades
+## 📌 Funcionalidades
 
 - **Conexão ao WhatsApp**: O bot se conecta ao WhatsApp através de um QR Code exibido na interface web.
 - **Atendimento Automatizado**: O bot responde a mensagens com base em um fluxo de conversa pré-definido.
-- **Interface Web**: Uma interface simples permite conectar e desconectar o bot, além de exibir o QR Code e o status da conexão.
+- **Interface Web**: Interface simples para conectar/desconectar o bot, além de exibir o QR Code e o status da conexão.
 - **Suporte a Múltiplos Usuários**: Várias pessoas podem interagir com o bot simultaneamente.
-- **Reconexão Automática**: O bot tenta reconectar automaticamente em caso de falhas na conexão.
+- **Reconexão Automática**: O bot tenta se reconectar automaticamente em caso de falhas na conexão.
 
-## Pré-requisitos
+## 🔧 Pré-requisitos
+
+Antes de começar, certifique-se de ter os seguintes requisitos instalados:
 
 - Node.js (versão 16 ou superior)
 - NPM (geralmente instalado com o Node.js)
 - Uma conta no WhatsApp (para escanear o QR Code)
 
-## Instalação
+## 🚀 Instalação
 
-1. Clone este repositório:
-
+1. **Clone este repositório:**
    ```bash
    git clone https://github.com/seu-usuario/nome-do-repositorio.git
-Navegue até o diretório do projeto:
+   ```
 
-bash
-Copy
-cd nome-do-repositorio
-Instale as dependências:
+2. **Acesse o diretório do projeto:**
+   ```bash
+   cd nome-do-repositorio
+   ```
 
-bash
-Copy
-npm install
-Crie um arquivo .env na raiz do projeto e adicione as variáveis de ambiente necessárias (se houver):
+3. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-env
-Copy
-# Exemplo de variáveis de ambiente
-PORT=3000
-Como Usar
-Inicie o servidor:
+4. **Crie um arquivo `.env` na raiz do projeto e adicione as variáveis de ambiente necessárias (se houver):**
+   ```env
+   PORT=3000
+   ```
 
-bash
-Copy
-node main.js
-Acesse a interface web no navegador:
+## ▶️ Como Usar
 
-Copy
-http://localhost:3000
-Clique em Conectar e escaneie o QR Code exibido usando o WhatsApp no seu celular.
+1. **Inicie o servidor:**
+   ```bash
+   node main.js
+   ```
+
+2. **Acesse a interface web no navegador:**
+   ```
+   http://localhost:3000
+   ```
+
+3. **Clique em "Conectar" e escaneie o QR Code exibido usando o WhatsApp no seu celular.**
 
 Após a conexão, o bot estará pronto para receber e responder mensagens.
 
-Estrutura do Projeto
-main.js: Ponto de entrada do servidor, responsável por gerenciar a conexão com o WhatsApp e o fluxo de conversa.
+## 📂 Estrutura do Projeto
 
-public/: Contém os arquivos estáticos (HTML, CSS, JavaScript) da interface web.
+```
+📁 nome-do-repositorio
+├── 📄 main.js         # Ponto de entrada do servidor
+├── 📁 public/         # Arquivos estáticos (HTML, CSS, JavaScript)
+│   ├── index.html    # Interface principal do usuário
+│   ├── styles.css    # Estilos da interface
+│   ├── script.js     # Lógica JavaScript da interface
+├── 📁 auth_info/      # Credenciais de autenticação do WhatsApp (gerado automaticamente)
+```
 
-index.html: Interface principal do usuário.
+## 🤝 Contribuição
 
-styles.css: Estilos CSS para a interface.
+Contribuições são bem-vindas! Para colaborar:
 
-script.js: Lógica JavaScript para interação com o servidor.
+1. Faça um **fork** do projeto.
+2. Crie uma **branch** para sua feature:
+   ```bash
+   git checkout -b feature/nova-feature
+   ```
+3. Faça suas alterações e **commit**:
+   ```bash
+   git commit -m "Adiciona nova feature"
+   ```
+4. Faça **push** para a branch:
+   ```bash
+   git push origin feature/nova-feature
+   ```
+5. Abra um **Pull Request**.
 
-auth_info/: Pasta gerada automaticamente para armazenar as credenciais de autenticação do WhatsApp.
+## 📜 Licença
 
-Contribuição
-Contribuições são bem-vindas! Siga os passos abaixo:
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
 
-Faça um fork do projeto.
+## 📬 Contato
 
-Crie uma branch para sua feature (git checkout -b feature/nova-feature).
+Caso tenha dúvidas ou sugestões, entre em contato:
 
-Commit suas alterações (git commit -m 'Adiciona nova feature').
+- **Nome**: [Seu Nome]
+- **Email**: [seu-email@example.com]
+- **GitHub**: [seu-usuario](https://github.com/seu-usuario)
 
-Faça push para a branch (git push origin feature/nova-feature).
+## 🔄 Como Subir para o GitHub
 
-Abra um Pull Request.
+1. **Crie um Repositório no GitHub:**
+   - Acesse o [GitHub](https://github.com) e crie um novo repositório.
+   - Defina um nome e configure as opções desejadas.
 
-Licença
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para mais detalhes.
+2. **Inicialize o Git no projeto:**
+   ```bash
+   git init
+   ```
 
-Contato
-Se tiver dúvidas ou sugestões, entre em contato:
+3. **Adicione os arquivos ao repositório:**
+   ```bash
+   git add .
+   ```
 
-Nome: [Seu Nome]
+4. **Faça o primeiro commit:**
+   ```bash
+   git commit -m "Initial commit"
+   ```
 
-Email: [seu-email@example.com]
+5. **Conecte ao repositório remoto:**
+   ```bash
+   git remote add origin https://github.com/seu-usuario/nome-do-repositorio.git
+   ```
 
-GitHub: seu-usuario
+6. **Envie as alterações para o GitHub:**
+   ```bash
+   git push -u origin main
+   ```
 
-Copy
+### 🎯 Próximos Passos
 
----
-
-### **Como Subir para o GitHub:**
-
-1. **Crie um Repositório no GitHub**:
-   - Acesse o GitHub e crie um novo repositório.
-   - Dê um nome ao repositório e configure as opções desejadas.
-
-2. **Inicialize o Git no Projeto**:
-   - No terminal, navegue até a pasta do projeto e execute:
-
-     ```bash
-     git init
-     ```
-
-3. **Adicione os Arquivos ao Repositório**:
-   - Adicione todos os arquivos ao repositório:
-
-     ```bash
-     git add .
-     ```
-
-4. **Commit as Alterações**:
-   - Faça o primeiro commit:
-
-     ```bash
-     git commit -m "Initial commit"
-     ```
-
-5. **Conecte ao Repositório Remoto**:
-   - Adicione o repositório remoto do GitHub:
-
-     ```bash
-     git remote add origin https://github.com/seu-usuario/nome-do-repositorio.git
-     ```
-
-6. **Envie as Alterações para o GitHub**:
-   - Faça o push das alterações:
-
-     ```bash
-     git push -u origin main
-     ```
-
----
-
-### **Próximos Passos:**
-
-1. **Atualize o README**:
-   - Personalize o `README.md` com as informações do seu projeto.
-
-2. **Adicione uma Licença**:
-   - Crie um arquivo `LICENSE` na raiz do projeto com a licença escolhida (por exemplo, MIT).
-
-3. **Compartilhe o Projeto**:
-   - Compartilhe o link do repositório no GitHub com outras pessoas.
+- Personalize o `README.md` com mais detalhes sobre seu projeto.
+- Adicione um arquivo `LICENSE` para definir a licença do projeto.
+- Compartilhe o link do repositório no GitHub com sua equipe e comunidade!
 
 Se precisar de mais ajuda, é só avisar! 😊
+
