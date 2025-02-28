@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectar WhatsApp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background"></div> <!-- Fundo animado -->
+    <div class="container">
+        <h1>Conectar WhatsApp</h1>
+        <button id="conectarBtn">Conectar</button>
+        <button id="desconectarBtn" class="hidden">Desconectar</button>
+        <div id="qrCodeContainer" class="hidden">
+            <p>Escaneie o QR Code abaixo:</p>
+            <img id="qrCodeImage" src="" alt="QR Code">
+        </div>
+        <div id="statusContainer" class="hidden">
+            <p id="statusText"></p>
+        </div>
+        <div id="errorContainer" class="hidden">
+            <p id="errorText"></p>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        const conectarBtn = document.getElementById("conectarBtn");
+        const desconectarBtn = document.getElementById("desconectarBtn");
+        const qrCodeContainer = document.getElementById("qrCodeContainer");
+        const qrCodeImage = document.getElementById("qrCodeImage");
+        const statusContainer = document.getElementById("statusContainer");
+        const statusText = document.getElementById("statusText");
+        const errorContainer = document.getElementById("errorContainer");
+        const errorText = document.getElementById("errorText");
+
+        // Quando o botão "Conectar" é clicado
+        conectarBtn.addEventListener("click", () => {
+            socket.emit("iniciarConexao");
+            conectarBtn.disabled = true;
+            conectarBtn.textContent = "Conectando...";
+            desconectarBtn.classList.remove("hidden");
+            errorContainer.classList.add("hidden");
+        });
+
+        // Quando o botão "Desconectar" é clicado
+        desconectarBtn.addEventListener("click", () => {
+            socket.emit("desconectarBot");
+            conectarBtn.disabled = false;
+            conectarBtn.textContent = "Conectar";
+            desconectarBtn.classList.add("hidden");
+            qrCodeContainer.classList.add("hidden");
+            statusContainer.classList.add("hidden");
+        });
+
+        // Quando o QR Code é recebido
+        socket.on("qrCode", (qrCodeData) => {
+            if (qrCodeData) {
+                qrCodeContainer.classList.remove("hidden");
+                qrCodeImage.src = qrCodeData;
+            } else {
+                qrCodeContainer.classList.add("hidden");
+            }
+        });
+
+        // Quando a conexão é estabelecida
+        socket.on("connected", () => {
+            qrCodeContainer.classList.add("hidden");
+            statusContainer.classList.remove("hidden");
+            statusText.textContent = "Conectado com sucesso!";
+            conectarBtn.textContent = "Conectado";
+        });
+
+        // Quando o bot é desconectado
+        socket.on("disconnected", () => {
+            statusContainer.classList.add("hidden");
+            qrCodeContainer.classList.add("hidden");
+            conectarBtn.disabled = false;
+            conectarBtn.textContent = "Conectar";
+        });
+
+        // Quando ocorre um erro
+        socket.on("error", (message) => {
+            errorContainer.classList.remove("hidden");
+            errorText.textContent = message;
+            conectarBtn.disabled = false;
+            conectarBtn.textContent = "Conectar";
+        });
+    </script>
+</body>
+</html>
